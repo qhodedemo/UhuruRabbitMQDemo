@@ -1,0 +1,6 @@
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\bin\AsyncRabbitConn.dll
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\bin\AsyncRabbitConn.pdb
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\bin\RabbitMQ.Client.dll
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\obj\Debug\AsyncRabbitConn.dll
+C:\Code\AsyncRabbitWeb\AsyncRabbitConn\obj\Debug\AsyncRabbitConn.pdb
