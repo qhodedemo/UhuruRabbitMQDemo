@@ -75,6 +75,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnStringHelper.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

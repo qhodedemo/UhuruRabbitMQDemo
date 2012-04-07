@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 using System.Text;
 using System.IO;
 
-namespace AsyncRabbitWeb
+namespace RabbitProducer
 {
     public partial class _default : System.Web.UI.Page
     {

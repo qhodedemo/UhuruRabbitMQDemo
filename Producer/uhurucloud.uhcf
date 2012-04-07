@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<CloudApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Deployable="true" Memory="128" InstanceCount="1" Name="Producer" Framework="dotNet" Runtime="iis" xmlns="http://tempuri.org/PackageSchema.xsd">
+  <PackageFile />
+  <Urls>Producer.uhurucloud.net</Urls>
+  <DeploymentPath>C:\Code\Uhuru-Rabbit-MQ-Demo\Producer</DeploymentPath>
+</CloudApplication>

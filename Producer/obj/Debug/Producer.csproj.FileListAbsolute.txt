@@ -1,0 +1,8 @@
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\AsyncRabbitWeb.dll
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\AsyncRabbitWeb.pdb
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.dll
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.pdb
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.xml
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\ResolveAssemblyReference.cache
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.dll
+C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.pdb

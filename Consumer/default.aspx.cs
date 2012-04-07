@@ -8,7 +8,7 @@ using System.Web.Configuration;
 using RabbitMQ.Client;
 using System.Data.SqlClient;
 
-namespace AsyncRabbitWeb
+namespace RabbitConsumer
 {
     public partial class _default : System.Web.UI.Page
     {

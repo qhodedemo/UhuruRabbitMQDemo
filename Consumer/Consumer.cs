@@ -10,8 +10,9 @@ using System.Web.Configuration;
 using System.Data.SqlClient;
 using System.IO;
 using Newtonsoft.Json;
+using RabbitConsumer;
 
-namespace AsyncRabbitWeb
+namespace RabbitConsumer
 {
     public class Consumer : IDisposable
     {
@@ -23,7 +24,10 @@ namespace AsyncRabbitWeb
         public string QueueName { get; set; }
 
         protected string connString = WebConfigurationManager.AppSettings["dbConnectionString"];
+        protected string vcapConn = WebConfigurationManager.AppSettings["VCAP_SERVICES"];
+
         protected SqlConnection conn;
+
 
 
         //This is the delete for internal calling
@@ -47,17 +51,26 @@ namespace AsyncRabbitWeb
             try
             {
                 var connectionFactory = new ConnectionFactory();
-                //connectionFactory.HostName = "192.168.1.187";
-                //connectionFactory.UserName = "ubFMlFC1cLN8E";
-                //connectionFactory.Password = "phWo9XIq9uMQk";
-                //connectionFactory.Port = 5672;
-                //connectionFactory.VirtualHost = "v5c1f0be1bb7a4ba9a389a8bba32b0b69";
 
+                Dictionary<string, Service[]> dicServices = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
+
+                if (dicServices.ContainsKey("rabbitmq-2.4"))
+                {
+                    Service s = dicServices["rabbitmq-2.4"][0];
+
+                    connectionFactory.HostName = s.Credential.Hostname;
+                    connectionFactory.UserName = s.Credential.UserName;
+                    connectionFactory.Password = s.Credential.Password;
+                    connectionFactory.Port = s.Credential.Port;
+                    connectionFactory.VirtualHost = s.Credential.VHost;
+                }
+                /*
                 connectionFactory.HostName = "192.168.1.187";
                 connectionFactory.UserName = "ubsVNgAxn9y9b";
                 connectionFactory.Password = "pTbuZC7vz8r0m";
                 connectionFactory.Port = 5672;
                 connectionFactory.VirtualHost = "ve4eb67d61617422786d03fa801f55e55";
+                */
 
                 Connection = connectionFactory.CreateConnection();
                 Model = Connection.CreateModel();

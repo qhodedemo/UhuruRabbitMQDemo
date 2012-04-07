@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<CloudApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Deployable="true" Memory="128" InstanceCount="1" Name="RbtExchangeConsumer" Framework="dotNet" Runtime="iis" xmlns="http://tempuri.org/PackageSchema.xsd">
-  <PackageFile>C:\Code\DemoRabbitExchange\AsyncRabbitConn\uhurucloud.uhcf</PackageFile>
+<CloudApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Deployable="true" Memory="128" InstanceCount="1" Name="Consumer" Framework="dotNet" Runtime="iis" xmlns="http://tempuri.org/PackageSchema.xsd">
+  <PackageFile>C:\Code\Uhuru-Rabbit-MQ-Demo\Consumer\uhurucloud.uhcf</PackageFile>
   <Services ServiceName="RabbitQDb" ServiceType="mssql" OverwriteExisting="false" />
-  <Urls>RbtExgCon.uhurucloud.net</Urls>
-  <DeploymentPath>C:\Code\DemoRabbitExchange\AsyncRabbitConn</DeploymentPath>
+  <Urls>Consumer.uhurucloud.net</Urls>
+  <DeploymentPath>C:\Code\Uhuru-Rabbit-MQ-Demo\Consumer</DeploymentPath>
 </CloudApplication>

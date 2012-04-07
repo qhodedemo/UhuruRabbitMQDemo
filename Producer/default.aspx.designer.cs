@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AsyncRabbitWeb {
+namespace RabbitProducer {
     
     
     public partial class _default {

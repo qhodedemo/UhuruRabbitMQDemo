@@ -6,8 +6,10 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Exceptions;
 using RabbitMQ.Client.Events;
 using System.Web.Configuration;
+using Newtonsoft.Json;
+using RabbitProducer;
 
-namespace AsyncRabbitWeb
+namespace RabbitProducer
 {
     public class Producer : IDisposable
     {
@@ -16,6 +18,8 @@ namespace AsyncRabbitWeb
         public string Exchange { get; set; }
         public string ExchangeTypeName { get; set; }
         public string QueueName { get; set; }
+
+        protected string vcapConn = WebConfigurationManager.AppSettings["VCAP_SERVICES"];
 
         public Producer(string exchange, string exchangeType)
         {
@@ -28,18 +32,27 @@ namespace AsyncRabbitWeb
         {
             try
             {
+                Dictionary<string, Service[]> dicServices = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
                 var connectionFactory = new ConnectionFactory();
+
+                if (dicServices.ContainsKey("rabbitmq-2.4"))
+                {
+                    Service s = dicServices["rabbitmq-2.4"][0];
+
+                    connectionFactory.HostName = s.Credential.Hostname;
+                    connectionFactory.UserName = s.Credential.UserName;
+                    connectionFactory.Password = s.Credential.Password;
+                    connectionFactory.Port = s.Credential.Port;
+                    connectionFactory.VirtualHost = s.Credential.VHost;
+                }
+/*
+                
                 connectionFactory.HostName = "192.168.1.187";
                 connectionFactory.UserName = "ubsVNgAxn9y9b";
                 connectionFactory.Password = "pTbuZC7vz8r0m";
                 connectionFactory.Port = 5672;
                 connectionFactory.VirtualHost = "ve4eb67d61617422786d03fa801f55e55";
-       
-                //connectionFactory.HostName = WebConfigurationManager.AppSettings["rabbitMqHost"];
-                //connectionFactory.UserName = WebConfigurationManager.AppSettings["rabbitMqUser"];
-                //connectionFactory.Password = WebConfigurationManager.AppSettings["rabbitMqPassword"];
-                //connectionFactory.Port = Convert.ToInt32(WebConfigurationManager.AppSettings["rabbitMqPort"]);
-                //connectionFactory.VirtualHost = WebConfigurationManager.AppSettings["rabbitMqVhost"]; ;
+*/       
 
                 Connection = connectionFactory.CreateConnection();
                 Model = Connection.CreateModel();
