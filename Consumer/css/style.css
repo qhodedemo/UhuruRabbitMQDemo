@@ -24,8 +24,8 @@ a:hover {
 }
 
 body {
-	background: #0C1114 url(images/img01.jpg) no-repeat top center;
-	color: #8EA2AD;
+	background: ##999966 url(images/img01.jpg) no-repeat top center;
+	color: #FFFFFF;
 	line-height: 1.75em;
 	font-size: 12pt;
 }
@@ -69,6 +69,8 @@ h4 {
 img.alignleft {
 	margin: 5px 20px 20px 0;
 	float: left;
+    height: 250px;
+    width: 348px;
 }
 
 img.aligntop {
@@ -95,17 +97,17 @@ ul h4 {
 
 #footer {
 	text-align: center;
-	background: #090C0E;
+	background: #009999;
 	width: 860px;
 	padding: 20px;
 	margin: 0 auto 150px auto;
 	border-bottom: solid 1px #16232D;
 	border-top: solid 1px #000000;
-	color: #313C44;
+	color: #FFFFFF;
 }
 
 #footer a {
-	color: #313C44;
+	color: #003366;
 }
 
 #header {
@@ -216,10 +218,16 @@ ul h4 {
 {
 	float: left;
 	overflow: hidden;
-	width: 430px;
+	width: 860px;
 }
 
 #post3 {
+	
+	overflow: hidden;
+	width: 430px;
+}
+
+#post4 {
 	
 	overflow: hidden;
 	width: 430px;

@@ -28,8 +28,6 @@ namespace RabbitConsumer
 
         protected SqlConnection conn;
 
-
-
         //This is the delete for internal calling
         private delegate void ConsumeDelegate();
         protected bool isConsuming;

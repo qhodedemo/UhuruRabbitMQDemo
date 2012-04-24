@@ -60,9 +60,11 @@
     <Content Include="css\style.css" />
     <Content Include="default.aspx" />
     <Content Include="images\DemoArch.JPG" />
-    <Content Include="images\img03.jpg" />
     <Content Include="images\img02.gif" />
-    <Content Include="Web.config" />
+    <Content Include="images\img03.png" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

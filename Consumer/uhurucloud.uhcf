@@ -2,6 +2,7 @@
 <CloudApplication xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Deployable="true" Memory="128" InstanceCount="1" Name="Consumer" Framework="dotNet" Runtime="iis" xmlns="http://tempuri.org/PackageSchema.xsd">
   <PackageFile>C:\Code\Uhuru-Rabbit-MQ-Demo\Consumer\uhurucloud.uhcf</PackageFile>
   <Services ServiceName="RabbitQDb" ServiceType="mssql" OverwriteExisting="false" />
+  <Services ServiceName="RabbitMQDemo" ServiceType="rabbitmq" OverwriteExisting="false" />
   <Urls>Consumer.uhurucloud.net</Urls>
   <DeploymentPath>C:\Code\Uhuru-Rabbit-MQ-Demo\Consumer</DeploymentPath>
 </CloudApplication>

@@ -9,29 +9,33 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
-<body>
+<body bgcolor="#009999">
 <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="#">.Net Consumer to RabbitMQ</a></h1>
-			
+			<h1><a href="#">Consumer to RabbitMQ</a></h1>
+			<h2><a href="#">cross platform queuing demo</a></h2>
 		</div>
 	</div>
     <div id="page">
 	    <div id="content">
 		    <div id="post1">
-			    <img class="alignleft" src="images/img03.jpg" width="200" height="200" alt="" />
+			    <img class="alignleft" src="images/img03.png" width="200" height="200" alt="" />
 			    <p>
 				    This is <strong>Uhuru</strong>, a comprehensive, integrated application development platform, tools and services.
 			    </p>
                 <p>We enable rapid development and deployment of solutions in private and public clouds by enterprises and service providers</p>
                 <h2>Hetrogeneous Platform as a Service</h2>
 		    </div>
-            <div id="post2">            
-                <form id="frmMain" runat="server">
-                    <table>
+            <div id="post2">
+            <table>
+            <tr>
+                <td><img class="alignleft" src="images/DemoArch.JPG" width="400" height="400" alt="" /></td>
+                <td>
+                    <form id="frmMain" runat="server">
+                    <table width="400">
                     <tr>
-                        <td><asp:GridView ID="grdView" runat="server"></asp:GridView></td>
+                        <td><asp:GridView ID="grdView" runat="server" Width="100%"></asp:GridView></td>
                     </tr>
                     <tr>
                         <td><asp:Button ID="btnRec" runat="server" Text="Receive Message" onclick="btnRec_Click" /></td>
@@ -44,16 +48,10 @@
                         <h5><asp:Label ID="lblExgType" runat="server" Text="Exchange Type :"></asp:Label></h5>
                         <h5><asp:Label ID="lblQName" runat="server" Text="Queue name :"></asp:Label></h5>
                 </form>
+                </td>
+            </tr>
+            </table>
             </div>            
-		    <div id="post3">
-			    <h3>Queuing Demo</h3>
-			    <ul class="section-list">
-				    <li class="first"><h4>.Net Producer</h4><span>.Net application that is used to generate messages into a fan out "Incident Exchange"</span></li>
-				    <li><h4>.Net Receiver</h4><span>.Net application that is subscribed to "Incident Exchange" which puts the message into a SQL Storage layer</span></li>
-				    <li><h4>Java Producer</h4><span>Java app that is used to generate messages into fan out "Incident Exchange"</span></li>
-				    <li class="last"><h4>Java Receiver</h4><span>Java application that is subscribed to "Incident Exchange" which puts the message into a MySQL Storage layer</span></li>
-			    </ul>
-		    </div>
             <div id="footer">
 	            Copyright (c) 2012 UhuruSoftware.com. All rights reserved.
             </div>
