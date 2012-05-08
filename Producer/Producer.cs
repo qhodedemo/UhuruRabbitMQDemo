@@ -32,12 +32,12 @@ namespace RabbitProducer
         {
             try
             {
-                Dictionary<string, Service[]> dicServices = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
+                Dictionary<string, Service[]> connParams = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
                 var connectionFactory = new ConnectionFactory();
 
-                if (dicServices.ContainsKey("rabbitmq-2.4"))
+                if (connParams.ContainsKey("rabbitmq-2.4"))
                 {
-                    Service s = dicServices["rabbitmq-2.4"][0];
+                    Service s = connParams["rabbitmq-2.4"][0];
 
                     connectionFactory.HostName = s.Credential.Hostname;
                     connectionFactory.UserName = s.Credential.UserName;
@@ -45,14 +45,6 @@ namespace RabbitProducer
                     connectionFactory.Port = s.Credential.Port;
                     connectionFactory.VirtualHost = s.Credential.VHost;
                 }
-/*
-                
-                connectionFactory.HostName = "192.168.1.187";
-                connectionFactory.UserName = "ubsVNgAxn9y9b";
-                connectionFactory.Password = "pTbuZC7vz8r0m";
-                connectionFactory.Port = 5672;
-                connectionFactory.VirtualHost = "ve4eb67d61617422786d03fa801f55e55";
-*/       
 
                 Connection = connectionFactory.CreateConnection();
                 Model = Connection.CreateModel();

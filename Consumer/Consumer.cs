@@ -16,7 +16,6 @@ namespace RabbitConsumer
 {
     public class Consumer : IDisposable
     {
-        
         protected IModel Model { get; set; }
         protected IConnection Connection { get; set; }
         public string Exchange { get; set; }
@@ -27,15 +26,6 @@ namespace RabbitConsumer
         protected string vcapConn = WebConfigurationManager.AppSettings["VCAP_SERVICES"];
 
         protected SqlConnection conn;
-
-        //This is the delete for internal calling
-        private delegate void ConsumeDelegate();
-        protected bool isConsuming;
-
-        // used to pass messages back to UI for processing
-        public delegate void onReceiveMessage(byte[] message);
-        public event onReceiveMessage onMsgRec;
-
 
         public Consumer(string exchange, string exchangeType)
         {
@@ -49,26 +39,17 @@ namespace RabbitConsumer
             try
             {
                 var connectionFactory = new ConnectionFactory();
+                Dictionary<string, Service[]> connParams = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
 
-                Dictionary<string, Service[]> dicServices = JsonConvert.DeserializeObject<Dictionary<string, Service[]>>(vcapConn);
-
-                if (dicServices.ContainsKey("rabbitmq-2.4"))
+                if (connParams.ContainsKey("rabbitmq-2.4"))
                 {
-                    Service s = dicServices["rabbitmq-2.4"][0];
-
+                    Service s = connParams["rabbitmq-2.4"][0];
                     connectionFactory.HostName = s.Credential.Hostname;
                     connectionFactory.UserName = s.Credential.UserName;
                     connectionFactory.Password = s.Credential.Password;
                     connectionFactory.Port = s.Credential.Port;
                     connectionFactory.VirtualHost = s.Credential.VHost;
                 }
-                /*
-                connectionFactory.HostName = "192.168.1.187";
-                connectionFactory.UserName = "ubsVNgAxn9y9b";
-                connectionFactory.Password = "pTbuZC7vz8r0m";
-                connectionFactory.Port = 5672;
-                connectionFactory.VirtualHost = "ve4eb67d61617422786d03fa801f55e55";
-                */
 
                 Connection = connectionFactory.CreateConnection();
                 Model = Connection.CreateModel();
@@ -123,54 +104,6 @@ namespace RabbitConsumer
                 }
                 catch (Exception ex)
                 {
-                }
-            }
-        }
-
-        public void StartConsuming()
-        {
-            isConsuming = true;
-            ConsumeDelegate c = new ConsumeDelegate(Consume);
-            c.BeginInvoke(null, null);
-        }
-
-        public void Consume()
-        {
-            QueueingBasicConsumer consumer = new QueueingBasicConsumer(Model);
-            String consumerTag = Model.BasicConsume(QueueName, true, consumer);
-
-            while (isConsuming)
-            {
-                try
-                {
-                    BasicDeliverEventArgs e = (BasicDeliverEventArgs)consumer.Queue.Dequeue();
-                    IBasicProperties props = e.BasicProperties;
-                    byte[] body = e.Body;
-                    // ... process the message
-                    try
-                    {
-                        SqlCommand command = conn.CreateCommand();
-                        command.CommandText = "IF OBJECT_ID('dbo.tblRabbitQueueMsg','U') IS NULL BEGIN CREATE TABLE dbo.tblRabbitQueueMsg (ClientName varchar(100), QName varchar(50) , QDesc varchar(50), QPriority varchar(10)) END";
-                        command.ExecuteNonQuery();
-
-                        string[] strValues = System.Text.Encoding.UTF8.GetString(body).Split(' ');
-
-                        command.CommandText = "insert into dbo.tblRabbitQueueMsg (ClientName, QName, QDesc, QPriority) values (\'Client1\', \'" + strValues[0] + "\', \'" + strValues[1] + "\', \'" + strValues[2] + "\' )";
-                        command.ExecuteNonQuery();
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-
-//                    Model.BasicAck(e.DeliveryTag, false);
-                }
-                catch (OperationInterruptedException ex)
-                {
-                    // The consumer was removed, either through
-                    // channel or connection closure, or through the
-                    // action of IModel.BasicCancel().
-                    break;
                 }
             }
         }

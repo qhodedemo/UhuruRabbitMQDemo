@@ -54,8 +54,7 @@ namespace RabbitConsumer
 
     public class BindOpts
     {
-        [JsonProperty(PropertyName = "Avin")]
+        [JsonProperty(PropertyName = "dummy")]
         public string Avin { get; set; }
     }
-
 }

@@ -6,3 +6,11 @@ C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.xml
 C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\ResolveAssemblyReference.cache
 C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.dll
 C:\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.pdb
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\AsyncRabbitWeb.dll
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\AsyncRabbitWeb.pdb
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.dll
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.pdb
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\bin\Newtonsoft.Json.xml
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.dll
+C:\Users\avic\SkyDrive\Code\Uhuru-Rabbit-MQ-Demo\Producer\obj\Debug\AsyncRabbitWeb.pdb
