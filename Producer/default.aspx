@@ -32,7 +32,7 @@
                 <table>
                 <tr>
                     <td>
-                        <img class="alignleft" src="images/DemoArch.JPG" width="400" height="400" alt="" />
+                        <img class="alignleft" src="images/ProdArch.png" width="400" height="400" alt="" />
                     </td>
                     <td>
                     <form id="frmMain" runat="server" class="form-text">

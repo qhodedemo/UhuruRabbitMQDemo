@@ -61,8 +61,7 @@
   <ItemGroup>
     <Content Include="css\style.css" />
     <Content Include="default.aspx" />
-    <Content Include="images\DemoArch.JPG" />
-    <Content Include="images\img02.gif" />
+    <Content Include="images\ConsArch.png" />
     <Content Include="images\img03.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

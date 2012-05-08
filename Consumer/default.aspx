@@ -30,7 +30,7 @@
             <div id="post2">
             <table>
             <tr>
-                <td><img class="alignleft" src="images/DemoArch.JPG" width="400" height="400" alt="" /></td>
+                <td><img class="alignleft" src="images/ConsArch.png" width="400" height="400" alt="" /></td>
                 <td>
                     <form id="frmMain" runat="server">
                     <table width="400">
