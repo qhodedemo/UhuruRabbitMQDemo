@@ -1,7 +1,0 @@
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\obj\Debug\ResolveAssemblyReference.cache
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\bin\AsyncRabbitConn.dll
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\bin\AsyncRabbitConn.pdb
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\bin\Newtonsoft.Json.pdb
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\bin\Newtonsoft.Json.xml
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\obj\Debug\AsyncRabbitConn.dll
-C:\Code\DemoRabbitExchange\AsyncRabbitConn\obj\Debug\AsyncRabbitConn.pdb
